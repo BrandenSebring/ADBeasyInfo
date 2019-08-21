@@ -22,12 +22,15 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.TextInfoBox1 = New System.Windows.Forms.TextBox()
         Me.ConnectBTN = New System.Windows.Forms.Button()
         Me.KillADBbtn = New System.Windows.Forms.Button()
         Me.getInfoBTN = New System.Windows.Forms.Button()
         Me.exportBTN = New System.Windows.Forms.Button()
         Me.exportServerBTN = New System.Windows.Forms.Button()
+        Me.fixAdbBtn = New System.Windows.Forms.Button()
+        Me.pathChngBTN1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'TextInfoBox1
@@ -36,7 +39,7 @@ Partial Class Form1
         Me.TextInfoBox1.Multiline = True
         Me.TextInfoBox1.Name = "TextInfoBox1"
         Me.TextInfoBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextInfoBox1.Size = New System.Drawing.Size(525, 184)
+        Me.TextInfoBox1.Size = New System.Drawing.Size(328, 184)
         Me.TextInfoBox1.TabIndex = 0
         '
         'ConnectBTN
@@ -84,17 +87,39 @@ Partial Class Form1
         Me.exportServerBTN.Text = "Export to Server"
         Me.exportServerBTN.UseVisualStyleBackColor = True
         '
+        'fixAdbBtn
+        '
+        Me.fixAdbBtn.Location = New System.Drawing.Point(177, 352)
+        Me.fixAdbBtn.Name = "fixAdbBtn"
+        Me.fixAdbBtn.Size = New System.Drawing.Size(164, 23)
+        Me.fixAdbBtn.TabIndex = 6
+        Me.fixAdbBtn.Text = "Fix ADB Location"
+        Me.fixAdbBtn.UseVisualStyleBackColor = True
+        '
+        'pathChngBTN1
+        '
+        Me.pathChngBTN1.Location = New System.Drawing.Point(177, 323)
+        Me.pathChngBTN1.Name = "pathChngBTN1"
+        Me.pathChngBTN1.Size = New System.Drawing.Size(164, 23)
+        Me.pathChngBTN1.TabIndex = 7
+        Me.pathChngBTN1.Text = "Changed Path to ADB"
+        Me.pathChngBTN1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(550, 450)
+        Me.ClientSize = New System.Drawing.Size(355, 388)
+        Me.Controls.Add(Me.pathChngBTN1)
+        Me.Controls.Add(Me.fixAdbBtn)
         Me.Controls.Add(Me.exportServerBTN)
         Me.Controls.Add(Me.exportBTN)
         Me.Controls.Add(Me.getInfoBTN)
         Me.Controls.Add(Me.KillADBbtn)
         Me.Controls.Add(Me.ConnectBTN)
         Me.Controls.Add(Me.TextInfoBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
@@ -108,4 +133,6 @@ Partial Class Form1
     Friend WithEvents getInfoBTN As Button
     Friend WithEvents exportBTN As Button
     Friend WithEvents exportServerBTN As Button
+    Friend WithEvents fixAdbBtn As Button
+    Friend WithEvents pathChngBTN1 As Button
 End Class
