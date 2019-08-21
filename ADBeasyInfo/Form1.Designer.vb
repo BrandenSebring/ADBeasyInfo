@@ -31,16 +31,19 @@ Partial Class Form1
         Me.exportServerBTN = New System.Windows.Forms.Button()
         Me.fixAdbBtn = New System.Windows.Forms.Button()
         Me.pathChngBTN1 = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TextInfoBox1
         '
-        Me.TextInfoBox1.Location = New System.Drawing.Point(13, 13)
+        Me.TextInfoBox1.Location = New System.Drawing.Point(15, 12)
         Me.TextInfoBox1.Multiline = True
         Me.TextInfoBox1.Name = "TextInfoBox1"
         Me.TextInfoBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextInfoBox1.Size = New System.Drawing.Size(328, 184)
         Me.TextInfoBox1.TabIndex = 0
+        Me.TextInfoBox1.Text = "Welcome to the ProLogic Its ADB Tool!!!"
         '
         'ConnectBTN
         '
@@ -55,7 +58,7 @@ Partial Class Form1
         '
         Me.KillADBbtn.Location = New System.Drawing.Point(177, 204)
         Me.KillADBbtn.Name = "KillADBbtn"
-        Me.KillADBbtn.Size = New System.Drawing.Size(164, 23)
+        Me.KillADBbtn.Size = New System.Drawing.Size(141, 23)
         Me.KillADBbtn.TabIndex = 2
         Me.KillADBbtn.Text = "Kill ADB Server"
         Me.KillADBbtn.UseVisualStyleBackColor = True
@@ -80,36 +83,47 @@ Partial Class Form1
         '
         'exportServerBTN
         '
-        Me.exportServerBTN.Location = New System.Drawing.Point(177, 263)
+        Me.exportServerBTN.Location = New System.Drawing.Point(15, 293)
         Me.exportServerBTN.Name = "exportServerBTN"
-        Me.exportServerBTN.Size = New System.Drawing.Size(164, 23)
+        Me.exportServerBTN.Size = New System.Drawing.Size(155, 23)
         Me.exportServerBTN.TabIndex = 5
         Me.exportServerBTN.Text = "Export to Server"
         Me.exportServerBTN.UseVisualStyleBackColor = True
         '
         'fixAdbBtn
         '
-        Me.fixAdbBtn.Location = New System.Drawing.Point(177, 352)
+        Me.fixAdbBtn.Location = New System.Drawing.Point(176, 293)
         Me.fixAdbBtn.Name = "fixAdbBtn"
-        Me.fixAdbBtn.Size = New System.Drawing.Size(164, 23)
+        Me.fixAdbBtn.Size = New System.Drawing.Size(142, 23)
         Me.fixAdbBtn.TabIndex = 6
         Me.fixAdbBtn.Text = "Fix ADB Location"
         Me.fixAdbBtn.UseVisualStyleBackColor = True
         '
         'pathChngBTN1
         '
-        Me.pathChngBTN1.Location = New System.Drawing.Point(177, 323)
+        Me.pathChngBTN1.Location = New System.Drawing.Point(176, 264)
         Me.pathChngBTN1.Name = "pathChngBTN1"
-        Me.pathChngBTN1.Size = New System.Drawing.Size(164, 23)
+        Me.pathChngBTN1.Size = New System.Drawing.Size(142, 23)
         Me.pathChngBTN1.TabIndex = 7
         Me.pathChngBTN1.Text = "Changed Path to ADB"
         Me.pathChngBTN1.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(65, 340)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(220, 36)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(355, 388)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.pathChngBTN1)
         Me.Controls.Add(Me.fixAdbBtn)
         Me.Controls.Add(Me.exportServerBTN)
@@ -122,6 +136,7 @@ Partial Class Form1
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -135,4 +150,5 @@ Partial Class Form1
     Friend WithEvents exportServerBTN As Button
     Friend WithEvents fixAdbBtn As Button
     Friend WithEvents pathChngBTN1 As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

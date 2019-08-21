@@ -2,6 +2,7 @@
 
 Public Class Form1
 
+
     Dim adbDirectory As String = "C:\AdbStrip"
     Dim storeInfo(0 To 2) As String
     Private Sub ConnectBTN_Click(sender As Object, e As EventArgs) Handles ConnectBTN.Click
