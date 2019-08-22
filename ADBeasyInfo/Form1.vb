@@ -190,21 +190,14 @@ Public Class Form1
         TextInfoBox1.AppendText(adbDirectory)
     End Sub
 
-    Private Sub PathChngBTN1_Click(sender As Object, e As EventArgs) Handles pathChngBTN1.Click
-        Try
-            Dim getProp1 As New Process
-            getProp1.StartInfo.FileName = (adbDirectory + "\adb.exe")
-            getProp1.StartInfo.Arguments = "shell getprop"
-            getProp1.StartInfo.UseShellExecute = False
-            getProp1.StartInfo.RedirectStandardOutput = True
-            getProp1.StartInfo.CreateNoWindow = False
-            getProp1.Start()
-        Catch
-            MessageBox.Show("Error")
-        End Try
-    End Sub
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        MessageBox.Show("Welcome to the ProLogic ADB Tool.
+If you have an error, click Fix ADB Location, and navigate to your ADB Folder.
+
+Created by Branden Sebring", "About ProLogic ADB Tool", MessageBoxButtons.OK)
     End Sub
 End Class

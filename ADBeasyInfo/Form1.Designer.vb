@@ -30,7 +30,6 @@ Partial Class Form1
         Me.exportBTN = New System.Windows.Forms.Button()
         Me.exportServerBTN = New System.Windows.Forms.Button()
         Me.fixAdbBtn = New System.Windows.Forms.Button()
-        Me.pathChngBTN1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -99,17 +98,9 @@ Partial Class Form1
         Me.fixAdbBtn.Text = "Fix ADB Location"
         Me.fixAdbBtn.UseVisualStyleBackColor = True
         '
-        'pathChngBTN1
-        '
-        Me.pathChngBTN1.Location = New System.Drawing.Point(176, 264)
-        Me.pathChngBTN1.Name = "pathChngBTN1"
-        Me.pathChngBTN1.Size = New System.Drawing.Size(142, 23)
-        Me.pathChngBTN1.TabIndex = 7
-        Me.pathChngBTN1.Text = "Changed Path to ADB"
-        Me.pathChngBTN1.UseVisualStyleBackColor = True
-        '
         'PictureBox1
         '
+        Me.PictureBox1.ErrorImage = Nothing
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(65, 340)
         Me.PictureBox1.Name = "PictureBox1"
@@ -124,7 +115,6 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(355, 388)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.pathChngBTN1)
         Me.Controls.Add(Me.fixAdbBtn)
         Me.Controls.Add(Me.exportServerBTN)
         Me.Controls.Add(Me.exportBTN)
@@ -135,7 +125,7 @@ Partial Class Form1
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "ProLogic ADB Tool"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -149,6 +139,5 @@ Partial Class Form1
     Friend WithEvents exportBTN As Button
     Friend WithEvents exportServerBTN As Button
     Friend WithEvents fixAdbBtn As Button
-    Friend WithEvents pathChngBTN1 As Button
     Friend WithEvents PictureBox1 As PictureBox
 End Class
