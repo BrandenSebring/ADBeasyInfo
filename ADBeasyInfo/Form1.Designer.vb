@@ -31,6 +31,8 @@ Partial Class Form1
         Me.exportServerBTN = New System.Windows.Forms.Button()
         Me.fixAdbBtn = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.browseAPK = New System.Windows.Forms.Button()
+        Me.installAPKbtn = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -109,11 +111,31 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
         '
+        'browseAPK
+        '
+        Me.browseAPK.Location = New System.Drawing.Point(177, 234)
+        Me.browseAPK.Name = "browseAPK"
+        Me.browseAPK.Size = New System.Drawing.Size(141, 23)
+        Me.browseAPK.TabIndex = 9
+        Me.browseAPK.Text = "Browse for APK"
+        Me.browseAPK.UseVisualStyleBackColor = True
+        '
+        'installAPKbtn
+        '
+        Me.installAPKbtn.Location = New System.Drawing.Point(176, 264)
+        Me.installAPKbtn.Name = "installAPKbtn"
+        Me.installAPKbtn.Size = New System.Drawing.Size(142, 23)
+        Me.installAPKbtn.TabIndex = 10
+        Me.installAPKbtn.Text = "Install APK"
+        Me.installAPKbtn.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(355, 388)
+        Me.Controls.Add(Me.installAPKbtn)
+        Me.Controls.Add(Me.browseAPK)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.fixAdbBtn)
         Me.Controls.Add(Me.exportServerBTN)
@@ -140,4 +162,6 @@ Partial Class Form1
     Friend WithEvents exportServerBTN As Button
     Friend WithEvents fixAdbBtn As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents browseAPK As Button
+    Friend WithEvents installAPKbtn As Button
 End Class

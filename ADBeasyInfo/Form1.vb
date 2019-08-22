@@ -200,4 +200,28 @@ If you have an error, click Fix ADB Location, and navigate to your ADB Folder.
 
 Created by Branden Sebring", "About ProLogic ADB Tool", MessageBoxButtons.OK)
     End Sub
+    Dim storeName As String
+    Private Sub BrowseAPK_Click(sender As Object, e As EventArgs) Handles browseAPK.Click
+        Using browseThing As New OpenFileDialog
+            browseThing.Filter() = ".apk files (*.apk)|*.apk|All files (*.*)|*.*"
+            If browseThing.ShowDialog() <> DialogResult.OK Then Return
+            storeName = browseThing.FileName
+        End Using
+        TextInfoBox1.AppendText(vbNewLine & "File Selected for Install: " & storeName & vbNewLine & "Click Install APK to Proceed")
+    End Sub
+
+    Private Sub InstallAPKbtn_Click(sender As Object, e As EventArgs) Handles installAPKbtn.Click
+        Dim installAPK1 As New Process
+        installAPK1.StartInfo.FileName = (adbDirectory + "\adb.exe")
+        installAPK1.StartInfo.Arguments = ("install " + storeName)
+        installAPK1.StartInfo.UseShellExecute = False
+        installAPK1.StartInfo.RedirectStandardOutput = True
+        installAPK1.StartInfo.CreateNoWindow = True
+        installAPK1.Start()
+
+        Dim Reader66() As String = installAPK1.StandardOutput.ReadToEnd.Split(CChar(vbLf))
+        For Each lnK As String In Reader66
+            TextInfoBox1.AppendText(vbNewLine & lnK)
+        Next
+    End Sub
 End Class
