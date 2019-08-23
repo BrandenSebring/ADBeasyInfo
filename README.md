@@ -14,4 +14,5 @@ There is a button labeled "Fix ADB Location". This opens a file browser that let
 There is a .rar attached named AdbStrip.rar and this contains Android Debug Bridge (ADB) that is needed for this tool to work.
 
 Created by Branden Sebring 
+
 Enjoy!
