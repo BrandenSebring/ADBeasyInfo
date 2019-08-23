@@ -118,14 +118,21 @@ Public Class Form1
         End Try
 
     End Sub
-
+    Dim excelLocalPath As String
     Private Sub ExportBTN_Click(sender As Object, e As EventArgs) Handles exportBTN.Click
+        If String.IsNullOrEmpty(excelLocalPath) Then
+            Using browserThing As New OpenFileDialog
+                If browserThing.ShowDialog() <> DialogResult.OK Then Return
+                excelLocalPath = browserThing.FileName
+            End Using
+        End If
+
         Try
             Dim excelApp As Excel.Application = New Excel.Application()
             Dim excelBook As Excel.Workbook
-            Dim strPath As String = "C:\Users\Branden\Desktop\PhoneSheetLocal.xlsx"
 
-            excelBook = excelApp.Workbooks.Open(strPath, 0, False, 5, System.Reflection.Missing.Value, System.Reflection.Missing.Value, False, System.Reflection.Missing.Value, System.Reflection.Missing.Value, True, False, System.Reflection.Missing.Value, False)
+
+            excelBook = excelApp.Workbooks.Open(excelLocalPath, 0, False, 5, System.Reflection.Missing.Value, System.Reflection.Missing.Value, False, System.Reflection.Missing.Value, System.Reflection.Missing.Value, True, False, System.Reflection.Missing.Value, False)
 
             Dim excelSheets As Excel.Sheets = excelBook.Sheets
             Dim excelSheet As Excel.Worksheet = excelSheets(1)
@@ -145,9 +152,11 @@ Public Class Form1
             excelBook.Close()
             excelApp.Quit()
 
+            TextInfoBox1.AppendText(vbNewLine & "Information has been Written to Excel")
         Catch
             MessageBox.Show("Error")
         End Try
+
     End Sub
 
     Private Sub ExportServerBTN_Click(sender As Object, e As EventArgs) Handles exportServerBTN.Click
@@ -175,6 +184,7 @@ Public Class Form1
             excelBook.Save()
             excelBook.Close()
             excelApp.Quit()
+            TextInfoBox1.AppendText(vbNewLine & "Information has been added to Server")
         Catch
             MessageBox.Show("Error")
         End Try
@@ -191,7 +201,7 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        TextInfoBox1.AppendText("Welcome to the ProLogic Its ADB Tool" & vbNewLine)
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click

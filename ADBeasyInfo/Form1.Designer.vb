@@ -44,7 +44,6 @@ Partial Class Form1
         Me.TextInfoBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextInfoBox1.Size = New System.Drawing.Size(328, 184)
         Me.TextInfoBox1.TabIndex = 0
-        Me.TextInfoBox1.Text = "Welcome to the ProLogic Its ADB Tool!!!"
         '
         'ConnectBTN
         '
