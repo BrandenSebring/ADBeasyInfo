@@ -2,7 +2,6 @@
 
 Public Class Form1
 
-
     Dim adbDirectory As String = "C:\AdbStrip"
     Dim storeInfo(0 To 2) As String
     Private Sub ConnectBTN_Click(sender As Object, e As EventArgs) Handles ConnectBTN.Click
@@ -15,7 +14,6 @@ Public Class Form1
             adbStart.StartInfo.CreateNoWindow = True
             adbStart.Start()
 
-
             Dim readinfo1() As String = adbStart.StandardOutput.ReadToEnd.Split(CChar(vbLf))
             For Each ln1 As String In readinfo1
                 TextInfoBox1.AppendText(vbNewLine & ln1)
@@ -26,8 +24,6 @@ Public Class Form1
         Catch ex As Exception
             MessageBox.Show("Error, Please Check ADB folder Location")
         End Try
-
-
     End Sub
 
     Private Sub KillADBbtn_Click(sender As Object, e As EventArgs) Handles KillADBbtn.Click
@@ -44,7 +40,6 @@ Public Class Form1
         Catch ex As Exception
             MessageBox.Show("Error, Please Check ADB folder Location")
         End Try
-
     End Sub
 
     Private Sub GetInfoBTN_Click(sender As Object, e As EventArgs) Handles getInfoBTN.Click
@@ -131,7 +126,6 @@ Public Class Form1
             Dim excelApp As Excel.Application = New Excel.Application()
             Dim excelBook As Excel.Workbook
 
-
             excelBook = excelApp.Workbooks.Open(excelLocalPath, 0, False, 5, System.Reflection.Missing.Value, System.Reflection.Missing.Value, False, System.Reflection.Missing.Value, System.Reflection.Missing.Value, True, False, System.Reflection.Missing.Value, False)
 
             Dim excelSheets As Excel.Sheets = excelBook.Sheets
@@ -189,7 +183,6 @@ Public Class Form1
             MessageBox.Show("Error")
         End Try
     End Sub
-
 
     Private Sub FixAdbBtn_Click(sender As Object, e As EventArgs) Handles fixAdbBtn.Click
 
