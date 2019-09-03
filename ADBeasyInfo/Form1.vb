@@ -227,4 +227,5 @@ Created by Branden Sebring", "About ProLogic ADB Tool", MessageBoxButtons.OK)
             TextInfoBox1.AppendText(vbNewLine & lnK)
         Next
     End Sub
+
 End Class
