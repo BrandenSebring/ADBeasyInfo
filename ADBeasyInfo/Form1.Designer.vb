@@ -29,7 +29,6 @@ Partial Class Form1
         Me.getInfoBTN = New System.Windows.Forms.Button()
         Me.exportBTN = New System.Windows.Forms.Button()
         Me.exportServerBTN = New System.Windows.Forms.Button()
-        Me.fixAdbBtn = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.browseAPK = New System.Windows.Forms.Button()
         Me.installAPKbtn = New System.Windows.Forms.Button()
@@ -90,15 +89,6 @@ Partial Class Form1
         Me.exportServerBTN.Text = "Export to Server"
         Me.exportServerBTN.UseVisualStyleBackColor = True
         '
-        'fixAdbBtn
-        '
-        Me.fixAdbBtn.Location = New System.Drawing.Point(176, 293)
-        Me.fixAdbBtn.Name = "fixAdbBtn"
-        Me.fixAdbBtn.Size = New System.Drawing.Size(142, 23)
-        Me.fixAdbBtn.TabIndex = 6
-        Me.fixAdbBtn.Text = "Fix ADB Location"
-        Me.fixAdbBtn.UseVisualStyleBackColor = True
-        '
         'PictureBox1
         '
         Me.PictureBox1.ErrorImage = Nothing
@@ -136,7 +126,6 @@ Partial Class Form1
         Me.Controls.Add(Me.installAPKbtn)
         Me.Controls.Add(Me.browseAPK)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.fixAdbBtn)
         Me.Controls.Add(Me.exportServerBTN)
         Me.Controls.Add(Me.exportBTN)
         Me.Controls.Add(Me.getInfoBTN)
@@ -159,7 +148,6 @@ Partial Class Form1
     Friend WithEvents getInfoBTN As Button
     Friend WithEvents exportBTN As Button
     Friend WithEvents exportServerBTN As Button
-    Friend WithEvents fixAdbBtn As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents browseAPK As Button
     Friend WithEvents installAPKbtn As Button

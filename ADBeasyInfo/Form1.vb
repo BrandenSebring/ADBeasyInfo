@@ -2,9 +2,12 @@
 
 Public Class Form1
 
-    Dim adbDirectory As String = "C:\AdbStrip"
+
     Dim storeInfo(0 To 2) As String
+    Dim adbDirectory As String = System.Windows.Forms.Application.StartupPath
     Private Sub ConnectBTN_Click(sender As Object, e As EventArgs) Handles ConnectBTN.Click
+
+
         Try
             Dim adbStart As New Process
             adbStart.StartInfo.FileName = (adbDirectory + "\adb.exe")
@@ -24,6 +27,7 @@ Public Class Form1
         Catch ex As Exception
             MessageBox.Show("Error, Please Check ADB folder Location")
         End Try
+
     End Sub
 
     Private Sub KillADBbtn_Click(sender As Object, e As EventArgs) Handles KillADBbtn.Click
@@ -184,14 +188,14 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub FixAdbBtn_Click(sender As Object, e As EventArgs) Handles fixAdbBtn.Click
+    'Private Sub FixAdbBtn_Click(sender As Object, e As EventArgs) Handles fixAdbBtn.Click
 
-        Using browseThingy As New FolderBrowserDialog
-            If browseThingy.ShowDialog() <> DialogResult.OK Then Return
-            adbDirectory = browseThingy.SelectedPath
-        End Using
-        TextInfoBox1.AppendText(adbDirectory)
-    End Sub
+    '    Using browseThingy As New FolderBrowserDialog
+    '        If browseThingy.ShowDialog() <> DialogResult.OK Then Return
+    '        adbDirectory = browseThingy.SelectedPath
+    '    End Using
+    '    TextInfoBox1.AppendText(adbDirectory)
+    'End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextInfoBox1.AppendText("Welcome to the ProLogic Its ADB Tool" & vbNewLine)
