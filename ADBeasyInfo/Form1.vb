@@ -48,15 +48,15 @@ Public Class Form1
 
     Private Sub GetInfoBTN_Click(sender As Object, e As EventArgs) Handles getInfoBTN.Click
 
-        Dim dirtyIMEI As String
-        Dim dirtySerialNum As String
-        Dim dirtyMac As String
+        Dim dirtyIMEI As String = ""
+        Dim dirtySerialNum As String = ""
+        Dim dirtyMac As String = ""
 
         'shell get prop will return a list of things and we can pull the IMEI and Serial Number from it
         Try
             Dim getProp As New Process
             getProp.StartInfo.FileName = (adbDirectory + "\adb.exe")
-            getProp.StartInfo.Arguments = "shell getprop"
+            getProp.StartInfo.Arguments = ("shell getprop")
             getProp.StartInfo.UseShellExecute = False
             getProp.StartInfo.RedirectStandardOutput = True
             getProp.StartInfo.CreateNoWindow = True
@@ -66,7 +66,9 @@ Public Class Form1
             For Each ln2 As String In readinfo2
                 If ln2.Contains("[gsm.baseband.imei]:") Then
                     dirtyIMEI = ln2
-                ElseIf ln2.Contains("[ro.boot.serialno]:") Then
+                End If
+
+                If ln2.Contains("[ro.boot.serialno]:") Then
                     dirtySerialNum = ln2
                 End If
             Next
@@ -188,15 +190,6 @@ Public Class Form1
         End Try
     End Sub
 
-    'Private Sub FixAdbBtn_Click(sender As Object, e As EventArgs) Handles fixAdbBtn.Click
-
-    '    Using browseThingy As New FolderBrowserDialog
-    '        If browseThingy.ShowDialog() <> DialogResult.OK Then Return
-    '        adbDirectory = browseThingy.SelectedPath
-    '    End Using
-    '    TextInfoBox1.AppendText(adbDirectory)
-    'End Sub
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextInfoBox1.AppendText("Welcome to the ProLogic Its ADB Tool" & vbNewLine)
     End Sub
@@ -232,4 +225,21 @@ Created by Branden Sebring", "About ProLogic ADB Tool", MessageBoxButtons.OK)
         Next
     End Sub
 
+    Private Sub HideDevBtn_Click(sender As Object, e As EventArgs) Handles HideDevBtn.Click
+        Dim CloseDevOptions As New Process
+        CloseDevOptions.StartInfo.FileName = (adbDirectory + "\adb.exe")
+        CloseDevOptions.StartInfo.Arguments = ("shell settings put global development_settings_enabled 0")
+        CloseDevOptions.StartInfo.UseShellExecute = False
+        CloseDevOptions.StartInfo.RedirectStandardOutput = True
+        CloseDevOptions.StartInfo.CreateNoWindow = True
+        CloseDevOptions.Start()
+
+        CloseDevOptions.StartInfo.Arguments = ("shell pm clear com.android.settings")
+        CloseDevOptions.Start()
+
+        CloseDevOptions.StartInfo.Arguments = ("shell settings put global adb_enabled 0")
+        CloseDevOptions.Start()
+
+        TextInfoBox1.AppendText(vbNewLine & "Developer Options and USB Debugging have been disabled")
+    End Sub
 End Class

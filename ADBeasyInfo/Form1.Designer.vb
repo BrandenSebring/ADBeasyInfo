@@ -32,6 +32,7 @@ Partial Class Form1
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.browseAPK = New System.Windows.Forms.Button()
         Me.installAPKbtn = New System.Windows.Forms.Button()
+        Me.HideDevBtn = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -118,11 +119,21 @@ Partial Class Form1
         Me.installAPKbtn.Text = "Install APK"
         Me.installAPKbtn.UseVisualStyleBackColor = True
         '
+        'HideDevBtn
+        '
+        Me.HideDevBtn.Location = New System.Drawing.Point(176, 293)
+        Me.HideDevBtn.Name = "HideDevBtn"
+        Me.HideDevBtn.Size = New System.Drawing.Size(142, 23)
+        Me.HideDevBtn.TabIndex = 11
+        Me.HideDevBtn.Text = "Hide Dev Options"
+        Me.HideDevBtn.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(356, 385)
+        Me.Controls.Add(Me.HideDevBtn)
         Me.Controls.Add(Me.installAPKbtn)
         Me.Controls.Add(Me.browseAPK)
         Me.Controls.Add(Me.PictureBox1)
@@ -151,4 +162,5 @@ Partial Class Form1
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents browseAPK As Button
     Friend WithEvents installAPKbtn As Button
+    Friend WithEvents HideDevBtn As Button
 End Class
